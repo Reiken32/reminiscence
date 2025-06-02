@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reminiscence</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1 class="logo">Reminiscence</h1>
+  </header>
+  <main>
+    <div class="postit" onclick="expandNote(this)">
+      <div class="player">
+        <img class="thumbnail" src="https://i.ytimg.com/vi/E5BLkMGxDgQ/hqdefault.jpg" alt="Album Art" />
+        <iframe
+          class="youtube-player"
+          src="https://www.youtube.com/embed/E5BLkMGxDgQ?start=60"
+          title="YouTube video player"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <h2 class="title">밤하늘의 노래</h2>
+      <div class="content">
+        밤하늘을 바라보며 들었던 그 노래…  
+        내 마음의 잔잔한 파도를 일으켰지.
+      </div>
+      <div class="footer">
+        <span class="like-button" onclick="toggleLike(this)">♡</span>
+        <span class="tag-button">#추억</span>
+        <div class="meta">06/02/2025 - <i>익명</i></div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
