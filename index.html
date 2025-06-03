@@ -2,37 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reminiscence</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body>
+  <iframe
+  id="youtube-player"
+  src="https://www.youtube.com/embed/E5BLkMGxDgQ?enablejsapi=1"
+  width="0"
+  height="0"
+  style="border: none;"
+  allow="autoplay"
+></iframe>
   <header>
     <h1 class="logo">Reminiscence</h1>
   </header>
   <main>
-    <div class="postit" onclick="expandNote(this)">
+    <div class="post-it" onclick="expandNote(this)">
       <div class="player">
-        <img class="thumbnail" src="https://i.ytimg.com/vi/E5BLkMGxDgQ/hqdefault.jpg" alt="Album Art" />
-        <iframe
-          class="youtube-player"
-          src="https://www.youtube.com/embed/E5BLkMGxDgQ?start=60"
-          title="YouTube video player"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-        ></iframe>
+        <a href="https://www.youtube.com/watch?v=E5BLkMGxDgQ" target="_blank">
+          <img class="thumbnail" src="https://img.youtube.com/vi/E5BLkMGxDgQ/hqdefault.jpg" alt="썸네일" />
+        </a>
+        <div class="controls">
+          <button class="play-btn" onclick="togglePlayPause(event)">▶</button>
+          <div class="progress-bar"><div class="progress"></div></div>
+        </div>
       </div>
-      <h2 class="title">제목</h2>
-      <div class="content">
-        본문 설명
-      </div>
+      <h2 class="title">그 노래</h2>
+      <div class="hashtags">#추억</div>
+      <div class="content">이 노래를 들으면 떠오르는 그때 그 순간...</div>
       <div class="footer">
-        <span class="like-button" onclick="toggleLike(this)">♡</span>
-        <span class="tag-button">#추억</span>
-        <div class="meta">06/02/2025 - <i>익명</i></div>
+        <span class="heart-btn" onclick="toggleLike(event, this)">♡</span>
+        <span class="heart-count">0</span>
+        <div class="meta">06/03/2025 - <i>익명</i></div>
       </div>
     </div>
+    <iframe id="youtube-player" src="https://www.youtube.com/embed/E5BLkMGxDgQ?enablejsapi=1" style="display:none;"></iframe>
   </main>
   <script src="script.js"></script>
 </body>

@@ -1,113 +1,113 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fdf1f3;
+  background-color: #fff5f7;
   margin: 0;
   padding: 0;
 }
-
-header {
-  text-align: center;
-  padding: 1rem;
-}
-
 .logo {
   font-family: 'Brush Script MT', cursive;
   font-size: 3rem;
-  color: #e26a6a;
+  color: black;
+  text-align: center;
+  padding: 1rem;
 }
-
 main {
   display: flex;
   justify-content: center;
   padding: 2rem;
 }
-
-.postit {
+.post-it {
   width: 300px;
-  background: #fff3f3;
+  background: #ffe9ec;
   padding: 1rem;
-  border: 1px solid #f5c6c6;
-  border-radius: 8px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-  position: relative;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
+  position: relative;
+  transform-origin: top center;
 }
-
-.postit.expanded {
-  width: 500px;
-  white-space: pre-wrap;
+.post-it:hover {
+  transform: scale(1.03);
+  box-shadow: 4px 8px 16px rgba(0,0,0,0.1);
+}
+.post-it.expanded {
+  transform: scale(1.4);
   background-image: repeating-linear-gradient(
     to bottom,
-    #fff3f3,
-    #fff3f3 28px,
+    #ffe9ec,
+    #ffe9ec 28px,
     #f9dede 29px,
-    #fff3f3 30px
+    #ffe9ec 30px
   );
   z-index: 1000;
 }
-
+.post-it.expanded .title,
+.post-it.expanded .content,
+.post-it.expanded .meta {
+  transform: scale(0.8); /* 1 / 1.26 정도 (글씨는 1.1배 느낌) */
+  transform-origin: top left;
+}
 .player {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
-
 .thumbnail {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
 }
-
-.youtube-player {
-  width: 200px;
-  height: 60px;
+.controls {
+  flex: 1;
+  margin-left: 10px;
 }
-
+.play-btn {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.progress-bar {
+  height: 6px;
+  background: #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.progress {
+  width: 40%;
+  height: 100%;
+  background: #f48ca5;
+}
 .title {
   font-weight: bold;
   margin-top: 1rem;
 }
-
-.content {
-  margin-top: 0.5rem;
-  max-height: 100px;
-  overflow-y: auto;
+.hashtags {
+  margin-top: -5px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
 }
-
+.content {
+  margin: 0.5rem 0;
+}
 .footer {
-  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-.like-button {
+.heart-btn {
   font-size: 1.5rem;
   cursor: pointer;
   color: transparent;
-  text-shadow: 0 0 0 #ccc;
-  transition: color 0.2s;
+  text-shadow: 0 0 0 #aaa;
 }
-
-.like-button.liked {
+.heart-btn.liked {
   color: red;
   text-shadow: none;
 }
-
-.tag-button {
-  background: #ffe0e0;
-  padding: 0.2rem 0.5rem;
-  border-radius: 10px;
-  font-size: 0.8rem;
-  cursor: default;
-}
-
 .meta {
   font-family: 'Brush Script MT', cursive;
   font-size: 0.8rem;
-  color: #999;
-  position: absolute;
-  bottom: 8px;
-  right: 10px;
+  color: #555;
 }
